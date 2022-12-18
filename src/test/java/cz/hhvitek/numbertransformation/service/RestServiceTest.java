@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class RestServiceTest {
-	private final RestService restService = new ListByListRestService();
+	private final RestService restService = new NumberByNumberRestService();
 
 	@Test
 	public void exampleOkTest() {

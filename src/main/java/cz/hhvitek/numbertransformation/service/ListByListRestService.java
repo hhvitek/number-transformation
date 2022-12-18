@@ -4,9 +4,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
 
-import org.springframework.stereotype.Service;
-
-@Service
 public class ListByListRestService implements RestService {
 
 	/**

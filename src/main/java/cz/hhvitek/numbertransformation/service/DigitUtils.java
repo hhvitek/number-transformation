@@ -1,5 +1,6 @@
 package cz.hhvitek.numbertransformation.service;
 
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.LinkedList;
 
@@ -30,6 +31,13 @@ public final class DigitUtils {
 	}
 
 	/**
+	 * Converts input number to an array of its digits.
+	 */
+	public static Integer[] toDigitsArray(int number) {
+		return toDigits(number).toArray(Integer[]::new);
+	}
+
+	/**
 	 * concatenates number elements in collection, creating a single integer number in the process.
 	 *
 	 * @throws NumberFormatException if fails to create a number.
@@ -39,5 +47,15 @@ public final class DigitUtils {
 		StringBuilder stringBuilder = new StringBuilder(numbers.size());
 		numbers.forEach(stringBuilder::append);
 		return Integer.parseInt(stringBuilder.toString());
+	}
+
+	/**
+	 * concatenates number elements in collection, creating a single integer number in the process.
+	 *
+	 * @throws NumberFormatException if fails to create a number.
+	 * For example too many digits (>10 in case of integer) or zero digits or would overflow integer
+	 */
+	public static int toNumber(Integer[] numberArray) {
+		return toNumber(Arrays.asList(numberArray));
 	}
 }
